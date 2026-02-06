@@ -9,9 +9,9 @@ const HomePage = () => {
 
   // River images for hero carousel
   const heroImages = [
-    { src: '/varuna1.png', alt: 'Varuna River', title: 'Varuna River' },
-    { src: '/river1.png', alt: 'Assi River', title: 'Assi River' },
-    { src: '/river2.png', alt: 'Ganga River', title: 'Ganga River' },
+    { src: '/image_9.jpeg', alt: 'Varuna River', title: 'Varuna River' },
+    { src: '/river3.png', alt: 'Assi River', title: 'Assi River' },
+    { src: '/image_15.png', alt: 'Ganga River', title: 'Ganga River' },
   ];
 
   // Auto-rotate hero images
