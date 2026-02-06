@@ -56,7 +56,7 @@ export default function DataAccessPage() {
             {/* Background Image */}
             <div className="fixed inset-0 z-0">
                 <img
-                    src="/river1.png"
+                    src="/image_9.jpeg"
                     alt="River Management"
                     className="w-full h-full object-cover"
                 />

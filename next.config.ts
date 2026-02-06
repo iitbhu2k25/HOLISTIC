@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/assi/:path*",
-        destination: "http://localhost:9000/assi/:path*",
+        destination: "https://holistic.pythonanywhere.com/assi/:path*",
       },
     ]
   },
