@@ -27,7 +27,7 @@ interface NavItem {
 // ============================================================================
 
 const navItems: NavItem[] = [
-  { label: 'Home', href: '/home' },
+  { label: 'Home', href: '/' },
   {
     label: 'About',
     submenu: [
@@ -51,7 +51,8 @@ const navItems: NavItem[] = [
       { label: 'Jal Jeevan Mission', href: '/ongoing-schemes/jal-jeevan-mission' }
     ]
   },
-  { label: 'Dashboard', href: '/' },
+  { label: 'Dashboard', href: '/dashboard' },
+  { label: 'Contact us', href: '/contact' },
 ];
 
 // ============================================================================
