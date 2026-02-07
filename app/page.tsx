@@ -10,7 +10,7 @@ const HomePage = () => {
   const heroImages = [
     { src: '/image_9.jpeg', alt: 'Varuna River', title: 'Varuna River' },
     { src: '/river3.png', alt: 'Assi River', title: 'Assi River' },
-    { src: '/image_15.png', alt: 'Ganga River', title: 'Ganga River' },
+    { src: '/RHAR.jpg', alt: 'Ganga River', title: 'Ganga River' },
   ];
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const HomePage = () => {
       image: '/river7.png'
     },
     {
-      title: 'sewage load',
+      title: 'Sewage Load',
       description: 'Geospatial inventory of ponds including restoration and health status.',
       icon: MapPin,
       href: '/sewage-load',
@@ -73,7 +73,7 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <section className="relative min-h-[900px] lg:h-screen flex items-center overflow-hidden py-20 lg:py-0">
+      <section className="relative min-h-[1000px] lg:h-screen flex items-center overflow-hidden py-20">
         {heroImages.map((image, index) => (
           <div
             key={index}
@@ -84,58 +84,46 @@ const HomePage = () => {
           </div>
         ))}
 
-        <div className="relative z-10 w-full">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 items-center">
-              
-              <div className="text-white lg:col-span-3">
-                <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tight">
-                  Holistic <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                    River Management
-                  </span>
-                </h1>
-                <p className="text-xl md:text-2xl mb-10 leading-relaxed text-blue-50/90 font-medium max-w-xl">
-                  Protecting our river ecosystems through integrated management and data-driven interventions.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link href="/about/overview" className="px-8 py-4 bg-white text-blue-900 font-bold rounded-xl hover:bg-blue-50 transition-all shadow-xl">
-                    Learn more
-                  </Link>
-                  <Link href="/data-access" className="px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-xl">
-                    Access Data
-                  </Link>
-                </div>
-              </div>
+        <div className="relative z-10 w-full h-full">
+          <div className="container mx-auto px-6 h-full flex flex-col justify-between">
+            
+            {/* Top Center: Heading and Subtext */}
+            <div className="text-center text-white mt-10">
+              <h1 className="text-7xl md:text-8xl font-black mb-4 leading-tight tracking-tight">
+                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-indigo-300"> Holistic River Management</span>
+              </h1>
+              <p className="text-lg md:text-xl leading-relaxed text-blue-50/90 font-medium max-w-3xl mx-auto">
+                Protecting our river ecosystems through integrated management and data-driven interventions.
+              </p>
+            </div>
 
-              {/* Cards shifted to the right */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:col-span-3">
+            {/* Middle Center: Cards Section */}
+            <div className="mt-62 mb-12">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-7xl mx-auto">
                 {dataAccessSections.map((section, index) => {
                   const Icon = section.icon;
                   return (
                     <Link
                       key={index}
                       href={section.href}
-                      // Colour changed to greyish-black (bg-slate-900)
-                      className="group bg-white-100 border border-slate-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col h-[260px]"
+                      className="group bg-white border border-slate-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col h-[240px]"
                     >
-                      <div className="relative h-[180px] overflow-hidden">
+                      <div className="relative h-[140px] overflow-hidden">
                         <img 
                           src={section.image} 
                           alt={section.title} 
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100" 
                         />
-                        <div className={`absolute bottom-35 left-2 w-7 h-7 rounded-lg ${section.color} flex items-center justify-center text-white shadow-lg z-10`}>
+                        <div className={`absolute bottom-2 left-2 w-7 h-7 rounded-lg ${section.color} flex items-center justify-center text-white shadow-lg z-10`}>
                           <Icon className="w-4 h-4" />
                         </div>
                       </div>
 
-                      {/* Reduced area with greyish-black background and lighter text */}
-                      <div className="p-2.5 flex flex-col justify-start">
-                        <h3 className="text-[13px] font-bold text-cyan-200 leading-tight mb-1 group-hover:text-blue-400">
+                      <div className="p-3 flex flex-col justify-start">
+                        <h3 className="text-[13px] font-bold text-slate-900 leading-tight mb-1 group-hover:text-blue-600">
                           {section.title}
                         </h3>
-                        <p className="text-[10px] leading-snug text-slate-300 line-clamp-3">
+                        <p className="text-[10px] leading-snug text-slate-600 line-clamp-3">
                           {section.description}
                         </p>
                       </div>
@@ -143,11 +131,22 @@ const HomePage = () => {
                   );
                 })}
               </div>
-
             </div>
+
+            {/* Bottom: Buttons (Bottom Left and Bottom Right) */}
+            <div className="flex justify-between items-end pb-10">
+              <Link href="/about/overview" className="px-8 py-4 bg-slate-300 text-blue-900 font-bold rounded-xl hover:bg-blue-50 transition-all shadow-xl">
+                Learn more
+              </Link>
+              <Link href="/data-access" className="px-8 py-4 bg-blue-400 text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-xl">
+                Access Data from App
+              </Link>
+            </div>
+
           </div>
         </div>
 
+        {/* Carousel Indicators */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
           {heroImages.map((_, index) => (
             <button
@@ -159,7 +158,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Mission Section Restored */}
+      {/* Mission Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
